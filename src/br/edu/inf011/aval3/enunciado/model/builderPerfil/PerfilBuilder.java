@@ -1,12 +1,14 @@
 package br.edu.inf011.aval3.enunciado.model.builderPerfil;
 
-import br.edu.inf011.aval3.enunciado.model.Perfil;
+import br.edu.inf011.aval3.enunciado.model.*;
+
+import java.util.List;
 
 public class PerfilBuilder implements Builder {
     private String nome;
     private String user;
     private String pwd;
-
+    private List<Documento> documentos;
     public PerfilBuilder(String nome) {
         this.nome = nome;
         this.user = nome;
