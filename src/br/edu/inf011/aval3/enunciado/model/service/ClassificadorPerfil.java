@@ -7,7 +7,7 @@ import br.edu.inf011.aval3.enunciado.model.CartaoCredito;
 import br.edu.inf011.aval3.enunciado.model.Documento;
 import br.edu.inf011.aval3.enunciado.model.Perfil;
 
-
+// classe Service dentro do padrão PROXY
 public class ClassificadorPerfil implements Classificador{
 	
 	private Perfil perfil;
