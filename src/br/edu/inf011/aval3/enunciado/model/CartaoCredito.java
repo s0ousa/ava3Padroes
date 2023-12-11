@@ -1,5 +1,7 @@
 package br.edu.inf011.aval3.enunciado.model;
 
+import br.edu.inf011.aval3.enunciado.model.visitor.DocumentoVisitor;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -23,7 +25,7 @@ public class CartaoCredito implements Documento{
 	
 	public String formatar() {
 		StringBuilder fmt = new StringBuilder();
-		fmt.append("CARTÃO DE CRÉDITO\n");
+		fmt.append("CARTï¿½O DE CRï¿½DITO\n");
 		fmt.append(this.nome + "\n");
 		fmt.append(this.numero.substring(0, 4) + " ");
 		fmt.append(this.numero.substring(4, 8) + " ");
@@ -45,9 +47,13 @@ public class CartaoCredito implements Documento{
 	public Integer pontuar() {
 		return this.validar() ? 2 : 0;
 	}
-	
-	
-	
+
+	@Override
+	public void aceitar(DocumentoVisitor visitor) {
+		visitor.visit(this);
+	}
+
+
 	private boolean verificaLuhn() {
 		int sum = 0;
 		boolean shouldDouble = false;

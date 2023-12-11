@@ -1,5 +1,7 @@
 package br.edu.inf011.aval3.enunciado.model;
 
+import br.edu.inf011.aval3.enunciado.model.visitor.DocumentoVisitor;
+
 import java.util.regex.Pattern;
 
 public class EMail implements Documento{
@@ -29,6 +31,11 @@ public class EMail implements Documento{
 	@Override
 	public Integer pontuar() {
 		return this.validar() ? 1 : 0;
+	}
+
+	@Override
+	public void aceitar(DocumentoVisitor visitor) {
+		visitor.visit(this);
 	}
 
 	public static String getRegex() {

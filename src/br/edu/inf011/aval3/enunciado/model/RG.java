@@ -1,5 +1,7 @@
 package br.edu.inf011.aval3.enunciado.model;
 
+import br.edu.inf011.aval3.enunciado.model.visitor.DocumentoVisitor;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -46,6 +48,11 @@ public class RG implements Documento{
 	@Override
 	public Integer pontuar() {
 		return this.validar() ? 1 : 0;
+	}
+
+	@Override
+	public void aceitar(DocumentoVisitor visitor) {
+		visitor.visit(this);
 	}
 
 

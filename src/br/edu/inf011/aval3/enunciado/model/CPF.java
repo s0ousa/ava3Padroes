@@ -1,5 +1,7 @@
 package br.edu.inf011.aval3.enunciado.model;
 
+import br.edu.inf011.aval3.enunciado.model.visitor.DocumentoVisitor;
+
 public class CPF implements Documento{
 	
 	public String nome;
@@ -40,8 +42,13 @@ public class CPF implements Documento{
 		// TODO Auto-generated method stub
 		return 3;
 	}
-	
-	
+
+	@Override
+	public void aceitar(DocumentoVisitor visitor) {
+		visitor.visit(this);
+	}
+
+
 	private boolean numeroValido() {
 	    int d1, d2;
 	    int digito1, digito2, resto;
