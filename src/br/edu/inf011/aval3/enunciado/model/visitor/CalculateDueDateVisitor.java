@@ -8,31 +8,31 @@ import br.edu.inf011.aval3.enunciado.model.RG;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class CalculateDueDateVisitor implements DocumentoVisitor{
+public class CalculateDueDateVisitor implements DocumentVisitor {
     @Override
-    public void visit(CPF cpf) {
-
+    public Object visit(CPF cpf) {
+        return "Não há validade para esse documento";
     }
 
     @Override
-    public void visit(RG rg) {
+    public Object visit(RG rg) {
         LocalDate hoje = LocalDate.now();
 
         long diasRestantes = ChronoUnit.DAYS.between(hoje, rg.validade);
-        System.out.println("Dias restantes até o fim da validade do RG: " + diasRestantes);
+        return "Dias restantes até o fim da validade do RG: " + diasRestantes;
     }
 
     @Override
-    public void visit(EMail email) {
-
+    public Object visit(EMail email) {
+        return "Não há validade para esse documento";
     }
 
     @Override
-    public void visit(CartaoCredito cartao) {
+    public Object visit(CartaoCredito cartao) {
         LocalDate hoje = LocalDate.now();
         LocalDate umAnoDepois = hoje.plusYears(1);
 
         long diasRestantes = ChronoUnit.DAYS.between(hoje, umAnoDepois);
-        System.out.println("Dias restantes até o fim da validade do Cartao: " + diasRestantes);
+        return "Dias restantes até o fim da validade do Cartao: " + diasRestantes;
     }
 }

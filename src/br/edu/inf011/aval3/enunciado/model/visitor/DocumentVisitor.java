@@ -4,11 +4,11 @@ import br.edu.inf011.aval3.enunciado.model.CPF;
 import br.edu.inf011.aval3.enunciado.model.CartaoCredito;
 import br.edu.inf011.aval3.enunciado.model.EMail;
 import br.edu.inf011.aval3.enunciado.model.RG;
-
-public interface DocumentoVisitor {
-    void visit(CPF cpf);
-    void visit(RG rg);
-    void visit(EMail email);
-    void visit(CartaoCredito cartao);
+//Interface Visitor
+public interface DocumentVisitor {
+    Object visit(CPF cpf);
+    Object visit(RG rg);
+    Object visit(EMail email);
+    Object visit(CartaoCredito cartao);
 
 }

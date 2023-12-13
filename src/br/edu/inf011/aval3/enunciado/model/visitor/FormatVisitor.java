@@ -5,26 +5,25 @@ import br.edu.inf011.aval3.enunciado.model.CartaoCredito;
 import br.edu.inf011.aval3.enunciado.model.EMail;
 import br.edu.inf011.aval3.enunciado.model.RG;
 
-import javax.print.Doc;
-
-public class FormatVisitor implements DocumentoVisitor {
+//concrete visitor for format document
+public class FormatVisitor implements DocumentVisitor {
     @Override
-    public void visit(CPF cpf) {
-        System.out.println( cpf.formatar());
+    public Object visit(CPF cpf) {
+       return cpf.formatar();
     }
 
     @Override
-    public void visit(RG rg) {
-        System.out.println( rg.formatar());
+    public Object visit(RG rg) {
+        return rg.formatar();
     }
 
     @Override
-    public void visit(EMail email) {
-        System.out.println( email.formatar());
+    public Object visit(EMail email) {
+        return email.formatar();
     }
 
     @Override
-    public void visit(CartaoCredito cartao) {
-        System.out.println( cartao.formatar());
+    public Object visit(CartaoCredito cartao) {
+        return cartao.formatar();
     }
 }

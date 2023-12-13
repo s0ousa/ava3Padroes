@@ -5,25 +5,26 @@ import br.edu.inf011.aval3.enunciado.model.CartaoCredito;
 import br.edu.inf011.aval3.enunciado.model.EMail;
 import br.edu.inf011.aval3.enunciado.model.RG;
 
-public class ScoreVisitor implements DocumentoVisitor{
+//concrete visitor for calculate score
+public class ScoreVisitor implements DocumentVisitor {
 
     @Override
-    public void visit(CPF cpf) {
-        System.out.println( cpf.pontuar());
+    public Object visit(CPF cpf) {
+        return  cpf.pontuar();
     }
 
     @Override
-    public void visit(RG rg) {
-        System.out.println( rg.pontuar());
+    public Object visit(RG rg) {
+        return  rg.pontuar();
     }
 
     @Override
-    public void visit(EMail email) {
-        System.out.println( email.pontuar());
+    public Object visit(EMail email) {
+        return  email.pontuar();
     }
 
     @Override
-    public void visit(CartaoCredito cartao) {
-        System.out.println( cartao.pontuar());
+    public Object visit(CartaoCredito cartao) {
+        return  cartao.pontuar();
     }
 }

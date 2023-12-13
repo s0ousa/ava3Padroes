@@ -5,27 +5,25 @@ import br.edu.inf011.aval3.enunciado.model.CartaoCredito;
 import br.edu.inf011.aval3.enunciado.model.EMail;
 import br.edu.inf011.aval3.enunciado.model.RG;
 
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-
-public class ValidationVisitor implements DocumentoVisitor{
+//concrete visitor for validation
+public class ValidationVisitor implements DocumentVisitor {
     @Override
-    public void visit(CPF cpf) {
-        System.out.println( cpf.validar());
+    public Object visit(CPF cpf) {
+        return cpf.validar();
     }
 
     @Override
-    public void visit(RG rg) {
-        System.out.println( rg.validar());
+    public Object visit(RG rg) {
+        return rg.validar();
     }
 
     @Override
-    public void visit(EMail email) {
-        System.out.println( email.validar());
+    public Object visit(EMail email) {
+       return email.validar();
     }
 
     @Override
-    public void visit(CartaoCredito cartao) {
-        System.out.println( cartao.validar());
+    public Object visit(CartaoCredito cartao) {
+       return cartao.validar();
     }
 }

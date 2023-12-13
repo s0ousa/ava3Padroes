@@ -1,6 +1,6 @@
 package br.edu.inf011.aval3.enunciado.model;
 
-import br.edu.inf011.aval3.enunciado.model.visitor.DocumentoVisitor;
+import br.edu.inf011.aval3.enunciado.model.visitor.DocumentVisitor;
 
 public class CPF implements Documento{
 	
@@ -44,7 +44,7 @@ public class CPF implements Documento{
 	}
 
 	@Override
-	public void aceitar(DocumentoVisitor visitor) {
+	public void aceitar(DocumentVisitor visitor) {
 		visitor.visit(this);
 	}
 

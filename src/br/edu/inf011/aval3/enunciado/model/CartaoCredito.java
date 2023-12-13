@@ -1,6 +1,6 @@
 package br.edu.inf011.aval3.enunciado.model;
 
-import br.edu.inf011.aval3.enunciado.model.visitor.DocumentoVisitor;
+import br.edu.inf011.aval3.enunciado.model.visitor.DocumentVisitor;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -49,7 +49,7 @@ public class CartaoCredito implements Documento{
 	}
 
 	@Override
-	public void aceitar(DocumentoVisitor visitor) {
+	public void aceitar(DocumentVisitor visitor) {
 		visitor.visit(this);
 	}
 

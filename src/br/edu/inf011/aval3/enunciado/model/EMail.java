@@ -1,6 +1,6 @@
 package br.edu.inf011.aval3.enunciado.model;
 
-import br.edu.inf011.aval3.enunciado.model.visitor.DocumentoVisitor;
+import br.edu.inf011.aval3.enunciado.model.visitor.DocumentVisitor;
 
 import java.util.regex.Pattern;
 
@@ -34,7 +34,7 @@ public class EMail implements Documento{
 	}
 
 	@Override
-	public void aceitar(DocumentoVisitor visitor) {
+	public void aceitar(DocumentVisitor visitor) {
 		visitor.visit(this);
 	}
 
