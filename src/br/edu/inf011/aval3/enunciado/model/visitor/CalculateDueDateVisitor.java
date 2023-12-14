@@ -18,7 +18,7 @@ public class CalculateDueDateVisitor implements DocumentVisitor {
     public Object visit(RG rg) {
         LocalDate hoje = LocalDate.now();
 
-        long diasRestantes = ChronoUnit.DAYS.between(hoje, rg.validade);
+        long diasRestantes = ChronoUnit.DAYS.between(hoje, rg.getValidade());
         return "Dias restantes até o fim da validade do RG: " + diasRestantes;
     }
 
@@ -30,9 +30,7 @@ public class CalculateDueDateVisitor implements DocumentVisitor {
     @Override
     public Object visit(CartaoCredito cartao) {
         LocalDate hoje = LocalDate.now();
-        LocalDate umAnoDepois = hoje.plusYears(1);
-
-        long diasRestantes = ChronoUnit.DAYS.between(hoje, umAnoDepois);
-        return "Dias restantes até o fim da validade do Cartao: " + diasRestantes;
+        long diasRestantes = ChronoUnit.DAYS.between(hoje, cartao.getVencimento());
+        return "Dias restantes até o fim da validade do Cartão: " + diasRestantes;
     }
 }
